@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Counter Project</title>
+    <style>
+      button {
+        background-color: grey;
+        font-size: larger;
+        font-style: italic;
+        border: 50px;
+        border-radius: 20px;
+        border-style: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Counter</h1>
+    <button id="addingbtn">Add</button>
+    <div id="countingvalue">0</div>
+    <button id="subtractingbtn">Subtract</button>
+
+    <button id="reset">Reset</button>
+    <script>
+      let count = 0;
+
+      const counter = document.getElementById("countingvalue");
+      const addBtn = document.getElementById("addingbtn");
+      const subtractBtn = document.getElementById("subtractingbtn");
+      const resetBtn = document.querySelector("#reset");
+
+      // Add 1 to the count
+      addBtn.addEventListener("click", () => {
+        count++;
+        counter.innerHTML = count;
+      });
+
+      // Subtract 1 from the count
+      subtractBtn.addEventListener("click", () => {
+        count--;
+        counter.innerHTML = count;
+      });
+
+      // Reset the count to zero
+      resetBtn.addEventListener("click", reset);
+
+      function reset() {
+        count = 0;
+        counter.innerHTML = count;
+      }
+    </script>
+  </body>
+</html>
